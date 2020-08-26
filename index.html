@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Dark Preview</title>
+  <link rel="stylesheet" href="index.css">
+
+  <!-- ogp -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@nekozuki_dev" />
+  <meta property="og:url" content="html-preview.nekozuki.me" />
+  <meta property="og:title" content="HTML Dark Preview" />
+  <meta property="og:description" content="niconico概要欄のhtmlをすぐにプレビューできるサイト" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>HTML Dark Preview</h1>
+      <div class="but">
+        <button onclick="copyToClipboard()">Copy</button>
+        <button onclick="dishide()" class="help">Help</button>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="main">
+    <textarea id="input-area" class="input-area" placeholder="ココに入力" onkeyup="onkey();"></textarea>
+    <div class="preview">
+      <h3>Preview</h3>
+      <div id="preview-light" class="preview-area light"></div>
+      <h3>Dark Preview</h3>
+      <div id="preview-dark" class="preview-area dark"></div>
+      <small>※タグは<a href="https://qa.nicovideo.jp/faq/show/821?site_domain=default" target="blank_">こちら</a>に記載されているものが利用可能です。</small>
+    </div>
+
+  </div>
+
+  <div id="help-modal" class="help-modal">
+    <div id="help-div" class="">
+      <button onclick="hide()" class="hide-but"></button>
+      <div>
+        <h2>このツールについて</h2>
+        <p>ニコニコ生放送で枠取りをする際に、「概要欄」のプレビューがなくて面倒だなと思ったことはありませんか？</p>
+        <p>このツールを使うことで簡単に概要欄が書けちゃいます！</p>
+  
+        <h2>使い方</h2>
+        <p>画面左側のテキスト入力欄に文章を入力すると、右側にプレビューが表示されます！</p>
+        <p>ダークモードのプレビューもあるので、スマホ上で文字と同化して読めない…といったことも防げます！</p>
+  
+        <h2>仕様</h2>
+        <ul>
+          <li><a href="https://qa.nicovideo.jp/faq/show/821?site_domain=default" target="_blank" rel="noopener noreferrer">こちら</a>に記載されているタグが利用可能です。</li>
+          <li>WEBサイトのURLはプレビュー時に自動リンク化されます。</li>
+          <li>ニコニコ各種IDは以下のものがプレビュー時に自動リンク化されます。</li>
+        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <td>動画ID</td>
+              <td>sm / nm / so</td>
+            </tr>
+            <tr>
+              <td>生放送ID</td>
+              <td>lv</td>
+            </tr>
+            <tr>
+              <td>チャンネル・ブロマガ</td>
+              <td>ch / ar</td>
+            </tr>
+            <tr>
+              <td>その他</td>
+              <td>ユーザーID / シリーズID / マイリストID</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <h2>作者</h2>
+        <p>猫月遥歩（ねこづきあゆむ） / AyumuNekozuki</p>
+        <p>
+          <a href="https://twitter.com/nekozuki_dev" target="_blank" rel="noopener noreferrer">Twitter</a> / 
+          <a href="https://github.com/AyumuNekozuki" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+
+        <h2>制作参考</h2>
+        <ul>
+          <li>niconicoアプリ/ニコニコ生放送アプリ</li>
+          <li>各種文献製作者様</li>
+          <li><a href="https://qiita.com/saba_uni_toro_/items/6b0c3193bc50b5980fcf" target="_blank" rel="noopener noreferrer">display:none; だと、transitionが効かない時の解決 - Qiita</a></li>
+          <li><a href="https://qiita.com/mythrnr/items/a203b6f01ff7fe714312" target="_blank" rel="noopener noreferrer">正規表現で特定のタグ以外のHTMLタグを除去する - Qiita</a></li>
+        </ul>
+        <p></p>
+        <p></p>
+  
+        <hr>
+  
+        <h2>蛇足</h2>
+        <p>このツールの拡張機能版欲しいよね（絶賛開発中です～）</p>
+      </div>
+      </div>
+  </div>
+
+  <footer>
+    <small>© 2020 AyumuNekozuki</small>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
